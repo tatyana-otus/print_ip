@@ -1,6 +1,7 @@
 #pragma once
-#include "debug_log.h"
 
+#include "debug_log.h"
+#include "print_tuple.h"
 #include "lib.h"
 #include <iostream>
 #include <type_traits>
@@ -9,10 +10,6 @@
 #include <algorithm>
 #include <iterator>
 #include <utility>
-
-
-//template<typename T, typename... Targs>
-//void  print (const T& os,  const Targs&... Fargs);
 
 
 template<typename T>
@@ -28,7 +25,7 @@ typename std::enable_if<std::is_same<T, std::vector<typename T::value_type>>::va
 }
 
 
-template<class T>
+template<typename T>
 typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostream& os, const T& ip) 
 {
     D_2_LOG(std::cout,__PRETTY_FUNCTION__);
@@ -40,7 +37,7 @@ typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostr
 }
 
 
-template<class T>
+template<typename T>
 typename std::enable_if<std::is_same<T, std::string>::value, void>::type print(std::ostream& os, const T& ip)
 {
     D_2_LOG(std::cout,__PRETTY_FUNCTION__);
@@ -49,14 +46,14 @@ typename std::enable_if<std::is_same<T, std::string>::value, void>::type print(s
 }
 
 
-/*template<typename T, typename... Targs>
-void  print (std::ostream& os,  const T& value, const Targs&... Fargs) 
+template <typename T>
+typename std::enable_if<is_tuple<T>::value, void>::type print(std::ostream& os, const T& ip)
 {
     D_2_LOG(std::cout,__PRETTY_FUNCTION__);
 
-    print(os, value);
-    print(os, Fargs...);
-}*/
+    tuple_p<T, std::tuple_size<T>::value>::print(os, ip);
+}
+
 
 
 

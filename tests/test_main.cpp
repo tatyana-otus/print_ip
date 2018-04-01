@@ -12,6 +12,34 @@
 
 using boost::test_tools::output_test_stream;
 
+template<typename T>
+void test_contaner(const std::initializer_list<T>& in_data, const std::string& out_data)
+{
+    std::stringstream oss_1;
+    print(oss_1, std::vector<T>{in_data});
+    BOOST_CHECK( oss_1.str() == out_data );
+
+    std::stringstream oss_2;
+    print(oss_2, std::list<T>{in_data});
+    BOOST_CHECK( oss_2.str() == out_data );
+}
+
+void test_string(const std::string& in_data, const std::string& out_data)
+{
+    std::stringstream oss;
+    print(oss, in_data);
+    BOOST_CHECK( oss.str() == out_data );
+}
+
+
+template<class... Types>
+void test_tuple(const std::string& out_data, Types... args)
+{
+    std::stringstream oss;
+    print(oss, std::make_tuple(args...));
+    BOOST_CHECK( oss.str() == out_data );
+
+}
 
 BOOST_AUTO_TEST_SUITE(test_suite_main)
 
@@ -38,74 +66,33 @@ BOOST_AUTO_TEST_CASE(base_ip_print)
     base_print( oss);
     BOOST_CHECK( oss.str() == out_data );
 }
-BOOST_AUTO_TEST_CASE(vector_ip_print)
+
+BOOST_AUTO_TEST_CASE(contaner_ip_print)
 {
-    std::stringstream oss_1;
-    print(oss_1, std::vector<int>{});
-    BOOST_CHECK( oss_1.str() == "" );
+    test_contaner<int>({}, "");
+    test_contaner(    {1}, "1");
+    test_contaner(    {87, 34, 19, 10},           "87.34.19.10");
+    test_contaner(    {1131232132, -1323, 34223}, "1131232132.-1323.34223");
+    test_contaner(    {"10", "10", "10eweqwe"},   "10.10.10eweqwe");
 
-    std::stringstream oss_2;
-    print(oss_2, std::vector<int>{1});
-    BOOST_CHECK( oss_2.str() == "1" );
-
-    std::stringstream oss_3;
-    print(oss_3, std::vector<int>{87, 34, 19, 10});
-    BOOST_CHECK( oss_3.str() == "87.34.19.10" );
-
-    std::stringstream oss_4;
-    print(oss_4, std::vector<int>{1131232132, -1323, 34223});
-    BOOST_CHECK( oss_4.str() == "1131232132.-1323.34223" );
-
-    std::stringstream oss_5;
-    print(oss_5, std::vector<std::string>{"10", "10", "10eweqwe"});
-    BOOST_CHECK( oss_5.str() == "10.10.10eweqwe" );
-}
-
-
-BOOST_AUTO_TEST_CASE(list_ip_print)
-{
-    std::stringstream oss_1;
-    print(oss_1, std::vector<int>{});
-    BOOST_CHECK( oss_1.str() == "" );
-
-    std::stringstream oss_2;
-    print(oss_2, std::list<int>{1});
-    BOOST_CHECK( oss_2.str() == "1" );
-
-    std::stringstream oss_3;
-    print(oss_3, std::list<int>{87, 34, 19, 10});
-    BOOST_CHECK( oss_3.str() == "87.34.19.10" );
-
-    std::stringstream oss_4;
-    print(oss_4, std::list<int>{1131232132, -1323, 34223});
-    BOOST_CHECK( oss_4.str() == "1131232132.-1323.34223" );
-
-    std::stringstream oss_5;
-    print(oss_5, std::list<std::string>{"10", "10", "10eweqwe"});
-    BOOST_CHECK( oss_5.str() == "10.10.10eweqwe" );
 }
 
 BOOST_AUTO_TEST_CASE(string_ip_print)
 {
-    std::stringstream oss_1;
-    print(oss_1, std::string{});
-    BOOST_CHECK( oss_1.str() == "" );
-
-    std::stringstream oss_2;
-    print(oss_2, std::string{"1"});
-    BOOST_CHECK( oss_2.str() == "1" );
-
-    std::stringstream oss_3;
-    print(oss_3, std::string{"87.34.19.10"});
-    BOOST_CHECK( oss_3.str() == "87.34.19.10" );
-
-    std::stringstream oss_4;
-    print(oss_4, std::string{"1131232132.-1323.34223"});
-    BOOST_CHECK( oss_4.str() == "1131232132.-1323.34223" );
-
-    std::stringstream oss_5;
-    print(oss_5, std::string{"10.10.10eweqwe"});
-    BOOST_CHECK( oss_5.str() == "10.10.10eweqwe" );
+    test_string("", "");
+    test_string("1", "1");
+    test_string("87.34.19.10", "87.34.19.10");
+    test_string("1131232132.-1323.34223", "1131232132.-1323.34223");
+    test_string("10.10.10eweqwe", "10.10.10eweqwe");
 }
+
+BOOST_AUTO_TEST_CASE(tuple_ip_print)
+{
+    test_tuple("");
+    test_tuple("87.34.19.10", 87, 34, 19, 10);
+    test_tuple("10.10.10eweqwe", "10", "10", "10eweqwe");
+    test_tuple("10.10.10.10", "10", "10", 10, 10 );
+}
+
 
 BOOST_AUTO_TEST_SUITE_END()

@@ -13,6 +13,8 @@ int main(int, char**)
     std::cout << std::endl;
     print(std::cout, std::string     {"192.168.137.1"});
     std::cout << std::endl;
+    print(std::cout, std::make_tuple ( 192,168,137,1 ));
+    std::cout << std::endl;
 
     return 0;
 }
