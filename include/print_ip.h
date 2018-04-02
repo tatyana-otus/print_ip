@@ -12,6 +12,10 @@
 #include <utility>
 
 
+/*!
+ Функция печати условного ip-адреса.
+ Частичная специализация для контейнеров std::list, std::vector
+*/
 template<typename T>
 typename std::enable_if<std::is_same<T, std::vector<typename T::value_type>>::value || 
                         std::is_same<T, std::list  <typename T::value_type>>::value, void>::type print(std::ostream& os, const T& ip) 
@@ -24,7 +28,10 @@ typename std::enable_if<std::is_same<T, std::vector<typename T::value_type>>::va
     std::for_each(std::next(ip.begin()), std::end(ip),          [&os](const auto &i){ os << "." << i; });
 }
 
-
+/*!
+ Функция печати условного ip-адреса.
+ Частичная специализация для целочисленного представления
+*/
 template<typename T>
 typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostream& os, const T& ip) 
 {
@@ -36,7 +43,10 @@ typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostr
     print(os, v);
 }
 
-
+/*!
+ Функция печати условного ip-адреса.
+ Частичная специализация для std::string
+*/
 template<typename T>
 typename std::enable_if<std::is_same<T, std::string>::value, void>::type print(std::ostream& os, const T& ip)
 {
@@ -45,7 +55,10 @@ typename std::enable_if<std::is_same<T, std::string>::value, void>::type print(s
     os << ip;
 }
 
-
+/*!
+ Функция печати условного ip-адреса.
+ Частичная специализация для tuple
+*/
 template <typename T>
 typename std::enable_if<is_tuple<T>::value, void>::type print(std::ostream& os, const T& ip)
 {
@@ -56,7 +69,12 @@ typename std::enable_if<is_tuple<T>::value, void>::type print(std::ostream& os, 
 
 
 
-
+/*!
+ Печать адреса как char(-1)
+ Печать адреса как short(0)
+ Печать адреса как int(2130706433)
+ Печать адреса как long(8875824491850138409)
+*/
 void base_print(std::ostream& os)
 {
     print(os, (char)-1);

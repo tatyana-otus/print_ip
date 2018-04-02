@@ -12,6 +12,9 @@
 
 using boost::test_tools::output_test_stream;
 
+/*!
+ Вспомогательные функции для тестирования контейнеров std::list, std::vector
+*/
 template<typename T>
 void test_contaner(const std::initializer_list<T>& in_data, const std::string& out_data)
 {
@@ -24,6 +27,9 @@ void test_contaner(const std::initializer_list<T>& in_data, const std::string& o
     BOOST_CHECK( oss_2.str() == out_data );
 }
 
+/*!
+ Вспомогательные функции для тестирования std::string
+*/
 void test_string(const std::string& in_data, const std::string& out_data)
 {
     std::stringstream oss;
@@ -31,7 +37,9 @@ void test_string(const std::string& in_data, const std::string& out_data)
     BOOST_CHECK( oss.str() == out_data );
 }
 
-
+/*!
+ Вспомогательные функции для тестирования std::tuple
+*/
 template<class... Types>
 void test_tuple(const std::string& out_data, Types... args)
 {
@@ -54,6 +62,10 @@ BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(test_suite_ip_print)
 
+/*!
+ Тестирование функции печати условного ip-адреса
+ для целочисленного представления
+*/
 BOOST_AUTO_TEST_CASE(base_ip_print)
 {
     std::string out_data =
@@ -67,6 +79,10 @@ BOOST_AUTO_TEST_CASE(base_ip_print)
     BOOST_CHECK( oss.str() == out_data );
 }
 
+/*!
+ Тестирование функции печати условного ip-адреса
+ для контейнеров std::list, std::vector
+*/
 BOOST_AUTO_TEST_CASE(contaner_ip_print)
 {
     test_contaner<int>({}, "");
@@ -77,6 +93,10 @@ BOOST_AUTO_TEST_CASE(contaner_ip_print)
 
 }
 
+/*!
+ Тестирование функции печати условного ip-адреса
+ для std::string
+*/
 BOOST_AUTO_TEST_CASE(string_ip_print)
 {
     test_string("", "");
@@ -86,6 +106,10 @@ BOOST_AUTO_TEST_CASE(string_ip_print)
     test_string("10.10.10eweqwe", "10.10.10eweqwe");
 }
 
+/*!
+ Тестирование функции печати условного ip-адреса
+ для std::tuple
+*/
 BOOST_AUTO_TEST_CASE(tuple_ip_print)
 {
     test_tuple("");
