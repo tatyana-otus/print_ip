@@ -30,7 +30,7 @@ struct tuple_p {
     }
 };
 /*!
- Печать 1-го элемента std::tuple
+ Печать 0-го элемента std::tuple
 */
 template<class T>
 struct tuple_p<T, 1> {
@@ -40,7 +40,7 @@ struct tuple_p<T, 1> {
     }
 };
 /*!
- Печать 0-го элемента std::tuple
+ Печать пустого std::tuple
 */
 template<class T>
 struct tuple_p<T, 0> {
