@@ -3,13 +3,10 @@
 #include "debug_log.h"
 #include "print_tuple.h"
 #include "lib.h"
-#include <iostream>
 #include <type_traits>
 #include <vector>
 #include <list>
 #include <algorithm>
-#include <iterator>
-#include <utility>
 
 
 /*!
@@ -24,8 +21,8 @@ typename std::enable_if<std::is_same<T, std::vector<typename T::value_type>>::va
 
     if(ip.empty()) return;
 
-    std::for_each(std::begin(ip),        std::next(ip.begin()), [&os](const auto &i){ os << i;        });
-    std::for_each(std::next(ip.begin()), std::end(ip),          [&os](const auto &i){ os << "." << i; });
+    std::for_each(std::cbegin(ip),        std::next(ip.cbegin()), [&os](const auto &i){ os << i;        });
+    std::for_each(std::next(ip.cbegin()), std::cend(ip),          [&os](const auto &i){ os << "." << i; });
 }
 
 /*!
@@ -39,7 +36,7 @@ typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostr
 
     auto n = ip;
     std::vector<uint32_t> v(sizeof(T));
-    std::generate(v.rbegin(), v.rend(), [&n]() { auto i = n & 0xff; n >>= 8; return i; });
+    std::generate(v.rbegin(), v.rend(), [&n]() { auto i = (n & 0xff); n >>= 8; return i; });
     print(os, v);
 }
 
@@ -66,8 +63,6 @@ typename std::enable_if<is_tuple<T>::value, void>::type print(std::ostream& os, 
 
     tuple_p<T, std::tuple_size<T>::value>::print(os, ip);
 }
-
-
 
 /*!
  Печать адреса как char(-1)

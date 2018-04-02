@@ -1,5 +1,4 @@
 #include "lib.h"
-#include <sstream>
 #include "print_ip.h"
 #include <sstream>
 
@@ -117,6 +116,5 @@ BOOST_AUTO_TEST_CASE(tuple_ip_print)
     test_tuple("10.10.10eweqwe", "10", "10", "10eweqwe");
     test_tuple("10.10.10.10", "10", "10", 10, 10 );
 }
-
 
 BOOST_AUTO_TEST_SUITE_END()

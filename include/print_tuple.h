@@ -29,23 +29,22 @@ struct tuple_p {
         os << "." << std::get<N-1>(t);
     }
 };
+
 /*!
  Печать 0-го элемента std::tuple
 */
-template<class T>
+template<typename T>
 struct tuple_p<T, 1> {
     static void print(std::ostream& os, const T& t) 
     {
         os << std::get<0>(t);
     }
 };
+
 /*!
  Печать пустого std::tuple
 */
-template<class T>
+template<typename T>
 struct tuple_p<T, 0> {
     static void print(std::ostream& os, const T& t) {}
 };
-
-
-
