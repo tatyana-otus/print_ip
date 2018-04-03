@@ -116,6 +116,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad05b39097fc0ad98456c20f2254ed672"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ad05b39097fc0ad98456c20f2254ed672">print</a> (std::ostream &amp;os, const std::string &amp;ip)</td></tr>
+<tr class="separator:ad05b39097fc0ad98456c20f2254ed672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98f09082394ef7b49c3574c5271458ff"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a98f09082394ef7b49c3574c5271458ff"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
 &lt; T, std::vector&lt; typename <br class="typebreak"/>
@@ -129,11 +131,6 @@ T::value_type &gt; &gt;::value, void &gt;<br class="typebreak"/>
 &lt; std::is_integral&lt; T &gt;::value, <br class="typebreak"/>
 void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ab24bb8cbf7cba888ed9bf142ca9c42f7">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
 <tr class="separator:ab24bb8cbf7cba888ed9bf142ca9c42f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad693aa36263ae850372b7102c4cf397d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad693aa36263ae850372b7102c4cf397d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
-&lt; T, std::string &gt;::value, <br class="typebreak"/>
-void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ad693aa36263ae850372b7102c4cf397d">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
-<tr class="separator:ad693aa36263ae850372b7102c4cf397d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06021b2edb1b53112b0cd58006096d57"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a06021b2edb1b53112b0cd58006096d57"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structis__tuple.html">is_tuple</a>&lt; T &gt;<br class="typebreak"/>
 ::value, void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a06021b2edb1b53112b0cd58006096d57">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
@@ -156,6 +153,33 @@ void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class
       </table>
 </div><div class="memdoc">
 <p>Печать адреса как char(-1) Печать адреса как short(0) Печать адреса как int(2130706433) Печать адреса как long(8875824491850138409) </p>
+
+</div>
+</div>
+<a class="anchor" id="ad05b39097fc0ad98456c20f2254ed672"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Функция печати условного ip-адреса. как std::string </p>
 
 </div>
 </div>
@@ -214,35 +238,6 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Функция печати условного ip-адреса. Частичная специализация для целочисленного представления </p>
-
-</div>
-</div>
-<a class="anchor" id="ad693aa36263ae850372b7102c4cf397d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if&lt;std::is_same&lt;T, std::string&gt;::value, void&gt;::type print </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>ip</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Функция печати условного ip-адреса. Частичная специализация для std::string </p>
 
 </div>
 </div>
