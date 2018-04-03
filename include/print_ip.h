@@ -11,6 +11,17 @@
 
 /*!
  Функция печати условного ip-адреса.
+ как std::string
+*/
+void print(std::ostream& os, const std::string& ip)
+{
+    D_2_LOG(std::cout,__PRETTY_FUNCTION__);
+
+    os << ip;
+}
+
+/*!
+ Функция печати условного ip-адреса.
  Частичная специализация для контейнеров std::list, std::vector
 */
 template<typename T>
@@ -40,17 +51,6 @@ typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostr
     print(os, v);
 }
 
-/*!
- Функция печати условного ip-адреса.
- Частичная специализация для std::string
-*/
-template<typename T>
-typename std::enable_if<std::is_same<T, std::string>::value, void>::type print(std::ostream& os, const T& ip)
-{
-    D_2_LOG(std::cout,__PRETTY_FUNCTION__);
-
-    os << ip;
-}
 
 /*!
  Функция печати условного ip-адреса.
