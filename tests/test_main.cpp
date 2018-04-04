@@ -84,12 +84,13 @@ BOOST_AUTO_TEST_CASE(base_ip_print)
 */
 BOOST_AUTO_TEST_CASE(contaner_ip_print)
 {
+    test_contaner<std::string>({}, "");
     test_contaner<int>({}, "");
+
     test_contaner(    {1}, "1");
     test_contaner(    {87, 34, 19, 10},           "87.34.19.10");
     test_contaner(    {1131232132, -1323, 34223}, "1131232132.-1323.34223");
     test_contaner(    {"10", "10", "10eweqwe"},   "10.10.10eweqwe");
-
 }
 
 /*!
@@ -112,9 +113,12 @@ BOOST_AUTO_TEST_CASE(string_ip_print)
 BOOST_AUTO_TEST_CASE(tuple_ip_print)
 {
     test_tuple("");
+    test_tuple("1", 1);
+
     test_tuple("87.34.19.10", 87, 34, 19, 10);
-    test_tuple("10.10.10eweqwe", "10", "10", "10eweqwe");
-    test_tuple("10.10.10.10", "10", "10", 10, 10 );
+    test_tuple("87.34.19.10", "87", "34", "19", "10");
+
+    test_tuple("10.10.10eweqwe", "10", "10", "10eweqwe");  
 }
 
 BOOST_AUTO_TEST_SUITE_END()
