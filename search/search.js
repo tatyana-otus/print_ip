@@ -11,7 +11,8 @@ var indexSectionsWithContent =
   1: "it",
   2: "dlmptv",
   3: "bdmpt",
-  4: "bdp"
+  4: "v",
+  5: "bdp"
 };
 
 var indexSectionNames =
@@ -20,7 +21,8 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "defines"
+  4: "variables",
+  5: "defines"
 };
 
 function convertToId(search)

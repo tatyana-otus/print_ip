@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,10 +111,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac9ccccbad90d62638238e8b782d0b370"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug__log_8h.html#ac9ccccbad90d62638238e8b782d0b370">D_1_LOG</a>(...)</td></tr>
-<tr class="separator:ac9ccccbad90d62638238e8b782d0b370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4988cd70537fc95625465500784a0449"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug__log_8h.html#a4988cd70537fc95625465500784a0449">D_2_LOG</a>(...)</td></tr>
-<tr class="separator:a4988cd70537fc95625465500784a0449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da96e8fb0c1f1322b1fbbd999183301"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug__log_8h.html#a7da96e8fb0c1f1322b1fbbd999183301">D_LOG</a>(...)</td></tr>
+<tr class="separator:a7da96e8fb0c1f1322b1fbbd999183301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af84aac5e93123f5614f70368c2793ee1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug__log_8h.html#af84aac5e93123f5614f70368c2793ee1">D_PF_LOG</a>(d_out)</td></tr>
+<tr class="separator:af84aac5e93123f5614f70368c2793ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -125,12 +125,12 @@ Functions</h2></td></tr>
 <tr class="separator:aec22ff8ecf8ac177afb1e5a8ef7726b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ac9ccccbad90d62638238e8b782d0b370"></a>
+<a class="anchor" id="a7da96e8fb0c1f1322b1fbbd999183301"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define D_1_LOG</td>
+          <td class="memname">#define D_LOG</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
@@ -141,15 +141,15 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4988cd70537fc95625465500784a0449"></a>
+<a class="anchor" id="af84aac5e93123f5614f70368c2793ee1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define D_2_LOG</td>
+          <td class="memname">#define D_PF_LOG</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em></td><td>)</td>
+          <td class="paramname">d_out</td><td>)</td>
           <td></td>
         </tr>
       </table>

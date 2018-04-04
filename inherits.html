@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,23 +89,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock">
 <p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
-<tr><td><img src="inherit_graph_0.png" border="0" alt="" usemap="#is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4"/>
-<map name="is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4" id="is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4">
-<area shape="rect" id="node2" href="structis__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html" title="is_tuple\&lt; std::tuple\l\&lt; Ts... \&gt; \&gt;" alt="" coords="131,5,264,46"/></map>
+<tr><td><img src="inherit_graph_0.png" border="0" alt="" usemap="#is__same__types_3_01T_01_4"/>
+<map name="is__same__types_3_01T_01_4" id="is__same__types_3_01T_01_4">
+<area shape="rect" id="node2" href="structis__same__types_3_01T_01_4.html" title="is_same_types\&lt; T \&gt;" alt="" coords="141,5,283,32"/><area shape="rect" id="node3" href="structis__tuple_3_01std_1_1tuple_3_01T_01_4_01_4.html" title="is_tuple\&lt; std::tuple\l\&lt; T \&gt; \&gt;" alt="" coords="145,57,279,98"/><area shape="rect" id="node4" href="structis__tuple_3_01std_1_1tuple_3_4_01_4.html" title="is_tuple\&lt; std::tuple\&lt;\&gt; \&gt;" alt="" coords="131,123,293,149"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#is__tuple_3_01T_01_4"/>
-<map name="is__tuple_3_01T_01_4" id="is__tuple_3_01T_01_4">
-<area shape="rect" id="node2" href="structis__tuple.html" title="is_tuple\&lt; T \&gt;" alt="" coords="136,5,235,32"/></map>
+<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#is__same__types_3_01T_00_01N_00_01Ts_8_8_8_4"/>
+<map name="is__same__types_3_01T_00_01N_00_01Ts_8_8_8_4" id="is__same__types_3_01T_00_01N_00_01Ts_8_8_8_4">
+<area shape="rect" id="node1" href="structis__same__types_3_01T_00_01N_00_01Ts_8_8_8_4.html" title="is_same_types\&lt; T, N,\l Ts...\&gt;" alt="" coords="5,5,157,46"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#tuple__p_3_01T_00_010_01_4"/>
+<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#is__same__types_3_01Ts_01_4"/>
+<map name="is__same__types_3_01Ts_01_4" id="is__same__types_3_01Ts_01_4">
+<area shape="rect" id="node1" href="structis__same__types.html" title="is_same_types\&lt; Ts \&gt;" alt="" coords="5,5,155,32"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#is__same__types_3_01Ts_8_8_8_4"/>
+<map name="is__same__types_3_01Ts_8_8_8_4" id="is__same__types_3_01Ts_8_8_8_4">
+<area shape="rect" id="node1" href="structis__same__types.html" title="is_same_types\&lt; Ts...\&gt;" alt="" coords="5,12,163,39"/><area shape="rect" id="node2" href="structis__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html" title="is_tuple\&lt; std::tuple\l\&lt; Ts... \&gt; \&gt;" alt="" coords="211,5,344,46"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#is__tuple_3_01T_00_01Ts_01_4"/>
+<map name="is__tuple_3_01T_00_01Ts_01_4" id="is__tuple_3_01T_00_01Ts_01_4">
+<area shape="rect" id="node2" href="structis__tuple.html" title="is_tuple\&lt; T, Ts \&gt;" alt="" coords="136,5,259,32"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#tuple__p_3_01T_00_010_01_4"/>
 <map name="tuple__p_3_01T_00_010_01_4" id="tuple__p_3_01T_00_010_01_4">
 <area shape="rect" id="node1" href="structtuple__p_3_01T_00_010_01_4.html" title="tuple_p\&lt; T, 0 \&gt;" alt="" coords="6,5,117,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#tuple__p_3_01T_00_011_01_4"/>
+<tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#tuple__p_3_01T_00_011_01_4"/>
 <map name="tuple__p_3_01T_00_011_01_4" id="tuple__p_3_01T_00_011_01_4">
 <area shape="rect" id="node1" href="structtuple__p_3_01T_00_011_01_4.html" title="tuple_p\&lt; T, 1 \&gt;" alt="" coords="6,5,117,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#tuple__p_3_01T_00_01N_01_4"/>
+<tr><td><img src="inherit_graph_7.png" border="0" alt="" usemap="#tuple__p_3_01T_00_01N_01_4"/>
 <map name="tuple__p_3_01T_00_01N_01_4" id="tuple__p_3_01T_00_01N_01_4">
 <area shape="rect" id="node1" href="structtuple__p.html" title="tuple_p\&lt; T, N \&gt;" alt="" coords="5,5,120,32"/></map>
 </td></tr>
