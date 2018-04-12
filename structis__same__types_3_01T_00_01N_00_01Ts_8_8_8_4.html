@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ab950289bda7838f66c9ba8cedee29c86"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structis__same__types_3_01T_00_01N_00_01Ts_8_8_8_4.html#ab950289bda7838f66c9ba8cedee29c86">value</a> = (std::is_same&lt;T, N&gt;::value) &amp;&amp; (<a class="el" href="structis__same__types.html">is_same_types</a>&lt;T, Ts...&gt;::value)</td></tr>
+<tr class="memitem:ab950289bda7838f66c9ba8cedee29c86"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structis__same__types_3_01T_00_01N_00_01Ts_8_8_8_4.html#ab950289bda7838f66c9ba8cedee29c86">value</a></td></tr>
 <tr class="separator:ab950289bda7838f66c9ba8cedee29c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -108,7 +108,7 @@ template&lt;typename T , typename N , typename... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const bool <a class="el" href="structis__same__types.html">is_same_types</a>&lt; T, N, Ts...&gt;::value = (std::is_same&lt;T, N&gt;::value) &amp;&amp; (<a class="el" href="structis__same__types.html">is_same_types</a>&lt;T, Ts...&gt;::value)</td>
+          <td class="memname">const bool <a class="el" href="structis__same__types.html">is_same_types</a>&lt; T, N, Ts...&gt;::value</td>
         </tr>
       </table>
   </td>
@@ -117,7 +117,10 @@ template&lt;typename T , typename N , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= (std::is_same&lt;typename std::decay&lt;T&gt;::type, </div>
+<div class="line">                                            <span class="keyword">typename</span> std::decay&lt;N&gt;::type&gt;<a class="code" href="structis__same__types_3_01T_00_01N_00_01Ts_8_8_8_4.html#ab950289bda7838f66c9ba8cedee29c86">::value</a>) &amp;&amp; </div>
+<div class="line">                              (<a class="code" href="structis__same__types.html">is_same_types&lt;T, Ts...&gt;::value</a>)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
