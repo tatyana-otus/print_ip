@@ -26,14 +26,15 @@ void print(std::ostream& os, const std::string& ip)
 */
 template<typename T>
 typename std::enable_if<std::is_same<T, std::vector<typename T::value_type>>::value || 
-                        std::is_same<T, std::list  <typename T::value_type>>::value, void>::type print(std::ostream& os, const T& ip) 
+                        std::is_same<T, std::list  <typename T::value_type>>::value, void>::type 
+print(std::ostream& os, const T& ip) 
 {   
     D_PF_LOG(std::cout);
 
     if(ip.empty()) return;
 
-    std::for_each(std::cbegin(ip),        std::next(ip.cbegin()), [&os](const auto &i){ os << i;        });
-    std::for_each(std::next(ip.cbegin()), std::cend(ip),          [&os](const auto &i){ os << "." << i; });
+    os << *ip.cbegin();
+    std::for_each(std::next(ip.cbegin()), std::cend(ip), [&os](const auto &i){ os << "." << i; });
 }
 
 /*!
@@ -41,16 +42,16 @@ typename std::enable_if<std::is_same<T, std::vector<typename T::value_type>>::va
  Частичная специализация для целочисленного представления
 */
 template<typename T>
-typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostream& os, const T& ip) 
+typename std::enable_if<std::is_integral<T>::value, void>::type
+print (std::ostream& os, const T& ip) 
 {
     D_PF_LOG(std::cout);
 
-    auto n = ip;
     std::array<uint32_t, sizeof(T)> v;
-    std::generate(v.rbegin(), v.rend(), [&n]() { auto i = (n & 0xff); n >>= 8; return i; });
+    std::generate(v.rbegin(), v.rend(), [n = ip]() mutable { auto i = (n & 0xff); n >>= 8; return i; });
 
-    std::for_each(std::cbegin(v),        std::next(v.cbegin()), [&os](const auto &i){ os << i;        });
-    std::for_each(std::next(v.cbegin()), std::cend(v),          [&os](const auto &i){ os << "." << i; });
+    os << *v.cbegin();
+    std::for_each(std::next(v.cbegin()), std::cend(v), [&os](const auto &i){ os << "." << i; });
 }
 
 
@@ -59,7 +60,8 @@ typename std::enable_if<std::is_integral<T>::value, void>::type print (std::ostr
  Частичная специализация для tuple
 */
 template <typename T>
-typename std::enable_if<is_tuple<T>::value, void>::type print(std::ostream& os, const T& ip)
+typename std::enable_if<is_tuple<T>::value, void>::type
+print(std::ostream& os, const T& ip)
 {
     D_PF_LOG(std::cout);
 
@@ -83,3 +85,8 @@ void base_print(std::ostream& os)
     print(os,  8875824491850138409);
     os << std::endl;
 }
+
+static_assert(is_tuple<std::tuple<int, const int>>::value, "oops!");
+static_assert(is_tuple<std::tuple<int, int>>::value, "oops!");
+static_assert(is_tuple<std::tuple<int, int, int, char>>::value == false, "oops!");
+//static_assert(is_tuple<const std::tuple<int, int>>::value, "oops!"); //!!!!

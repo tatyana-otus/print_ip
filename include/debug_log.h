@@ -24,7 +24,6 @@ void debug_info(std::ostream& d_out, const Arg& arg, const Args&... args)
 #endif
 
 #ifdef DEBUG_INFO_PF
-    //#define D_2_LOG(d_out, ...)  debug_info(d_out, __PRETTY_FUNCTION__, ##__VA_ARGS__)
     #define D_PF_LOG(d_out)  debug_info(d_out, __PRETTY_FUNCTION__)
 #else   
     #define D_PF_LOG(d_out) 

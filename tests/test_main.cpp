@@ -117,8 +117,7 @@ BOOST_AUTO_TEST_CASE(tuple_ip_print)
 
     test_tuple("87.34.19.10", 87, 34, 19, 10);
     test_tuple("87.34.19.10", "87", "34", "19", "10");
-
-    test_tuple("10.10.10eweqwe", "10", "10", "10eweqwe");  
+    test_tuple("10.10.10eweqwe.10", "10", "10", "10eweqwe", "10"); 
 }
 
 BOOST_AUTO_TEST_SUITE_END()

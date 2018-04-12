@@ -17,7 +17,9 @@ struct is_same_types<T> : std::true_type {};
 template <typename T, typename N, typename... Ts>
 struct is_same_types<T, N, Ts...>
 {
-    static const bool value = (std::is_same<T, N>::value) && (is_same_types<T, Ts...>::value);
+    static const bool value = (std::is_same<typename std::decay<T>::type, 
+                                            typename std::decay<N>::type>::value) && 
+                              (is_same_types<T, Ts...>::value);
 };
  
 
