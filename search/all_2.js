@@ -9,6 +9,5 @@ var searchData=
   ['is_5fsame_5fv',['is_same_v',['../print__tuple_8h.html#aa6c6bde5fd020a928e6d7b5fe8db7bb0',1,'print_tuple.h']]],
   ['is_5ftuple',['is_tuple',['../structis__tuple.html',1,'']]],
   ['is_5ftuple_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e',['is_tuple&lt; std::tuple&lt; Ts... &gt; &gt;',['../structis__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html',1,'']]],
-  ['is_5ftuple_3c_20std_3a_3atuple_3c_3e_20_3e',['is_tuple&lt; std::tuple&lt;&gt; &gt;',['../structis__tuple_3_01std_1_1tuple_3_4_01_4.html',1,'']]],
   ['is_5ftuple_5fv',['is_tuple_v',['../print__tuple_8h.html#a7f6f282ffeac81407489efbeee474dce',1,'print_tuple.h']]]
 ];
