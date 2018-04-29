@@ -85,7 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">print_ip.h File Reference</div>  </div>
 </div><!--header-->
@@ -118,25 +119,29 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:ad05b39097fc0ad98456c20f2254ed672"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ad05b39097fc0ad98456c20f2254ed672">print</a> (std::ostream &amp;os, const std::string &amp;ip)</td></tr>
 <tr class="separator:ad05b39097fc0ad98456c20f2254ed672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98f09082394ef7b49c3574c5271458ff"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a98f09082394ef7b49c3574c5271458ff"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
-&lt; T, std::vector&lt; typename <br class="typebreak"/>
-T::value_type &gt; &gt;::value||std::is_same<br class="typebreak"/>
+<tr class="memitem:a2914645df92b82830a5ae0888335a054"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2914645df92b82830a5ae0888335a054"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__tuple_8h.html#aa6c6bde5fd020a928e6d7b5fe8db7bb0">is_same_v</a>&lt; T, <br class="typebreak"/>
+std::vector&lt; typename <br class="typebreak"/>
+T::value_type &gt; &gt;||<a class="el" href="print__tuple_8h.html#aa6c6bde5fd020a928e6d7b5fe8db7bb0">is_same_v</a><br class="typebreak"/>
 &lt; T, std::list&lt; typename <br class="typebreak"/>
-T::value_type &gt; &gt;::value, void &gt;<br class="typebreak"/>
-::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a98f09082394ef7b49c3574c5271458ff">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
-<tr class="separator:a98f09082394ef7b49c3574c5271458ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab24bb8cbf7cba888ed9bf142ca9c42f7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab24bb8cbf7cba888ed9bf142ca9c42f7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
-&lt; std::is_integral&lt; T &gt;::value, <br class="typebreak"/>
-void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ab24bb8cbf7cba888ed9bf142ca9c42f7">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
-<tr class="separator:ab24bb8cbf7cba888ed9bf142ca9c42f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06021b2edb1b53112b0cd58006096d57"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a06021b2edb1b53112b0cd58006096d57"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structis__tuple.html">is_tuple</a>&lt; T &gt;<br class="typebreak"/>
-::value, void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a06021b2edb1b53112b0cd58006096d57">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
-<tr class="separator:a06021b2edb1b53112b0cd58006096d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+T::value_type &gt; &gt;, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a2914645df92b82830a5ae0888335a054">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
+<tr class="separator:a2914645df92b82830a5ae0888335a054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9e7304eec5e113b0d477848f86a9d2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abf9e7304eec5e113b0d477848f86a9d2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t<br class="typebreak"/>
+&lt; <a class="el" href="print__ip_8h.html#a396e4b8c756441b942c1619de108e56a">is_integral_v</a>&lt; T &gt;, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#abf9e7304eec5e113b0d477848f86a9d2">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
+<tr class="separator:abf9e7304eec5e113b0d477848f86a9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6a5306272992185bdf579da2b839c7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5e6a5306272992185bdf579da2b839c7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__tuple_8h.html#a7f6f282ffeac81407489efbeee474dce">is_tuple_v</a><br class="typebreak"/>
+&lt; T &gt;, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a5e6a5306272992185bdf579da2b839c7">print</a> (std::ostream &amp;os, const T &amp;ip)</td></tr>
+<tr class="separator:a5e6a5306272992185bdf579da2b839c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad08c4f97cceefae52f2d9f64df5ee433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ad08c4f97cceefae52f2d9f64df5ee433">base_print</a> (std::ostream &amp;os)</td></tr>
 <tr class="separator:ad08c4f97cceefae52f2d9f64df5ee433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a396e4b8c756441b942c1619de108e56a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a396e4b8c756441b942c1619de108e56a"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a396e4b8c756441b942c1619de108e56a">is_integral_v</a> = std::is_integral&lt;T&gt;::value</td></tr>
+<tr class="separator:a396e4b8c756441b942c1619de108e56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ad08c4f97cceefae52f2d9f64df5ee433"></a>
@@ -183,14 +188,14 @@ void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class
 
 </div>
 </div>
-<a class="anchor" id="a98f09082394ef7b49c3574c5271458ff"></a>
+<a class="anchor" id="a2914645df92b82830a5ae0888335a054"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;std::is_same&lt;T, std::vector&lt;typename T::value_type&gt; &gt;::value || std::is_same&lt;T, std::list &lt;typename T::value_type&gt; &gt;::value, void&gt;::type print </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__tuple_8h.html#aa6c6bde5fd020a928e6d7b5fe8db7bb0">is_same_v</a>&lt;T, std::vector&lt;typename T::value_type&gt; &gt;|| <a class="el" href="print__tuple_8h.html#aa6c6bde5fd020a928e6d7b5fe8db7bb0">is_same_v</a>&lt;T, std::list &lt;typename T::value_type&gt; &gt;, void&gt; print </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -212,14 +217,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab24bb8cbf7cba888ed9bf142ca9c42f7"></a>
+<a class="anchor" id="abf9e7304eec5e113b0d477848f86a9d2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;std::is_integral&lt;T&gt;::value, void&gt;::type print </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a396e4b8c756441b942c1619de108e56a">is_integral_v</a>&lt;T&gt;, void&gt; print </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -241,14 +246,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a06021b2edb1b53112b0cd58006096d57"></a>
+<a class="anchor" id="a5e6a5306272992185bdf579da2b839c7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;<a class="el" href="structis__tuple.html">is_tuple</a>&lt;T&gt;::value, void&gt;::type print </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__tuple_8h.html#a7f6f282ffeac81407489efbeee474dce">is_tuple_v</a>&lt;T&gt;, void&gt; print </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -267,6 +272,21 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Функция печати условного ip-адреса. Частичная специализация для tuple </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a396e4b8c756441b942c1619de108e56a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool is_integral_v = std::is_integral&lt;T&gt;::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
