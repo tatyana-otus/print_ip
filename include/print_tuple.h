@@ -35,9 +35,6 @@ struct is_tuple : std::false_type {};
 template <typename... Ts> 
 struct is_tuple<std::tuple<Ts... >> : is_same_types<Ts...> {};
 
-template <> 
-struct is_tuple<std::tuple<>> : std::true_type {};
-
 
 template< typename... Ts>
 constexpr bool is_tuple_v = is_tuple<Ts...>::value;
