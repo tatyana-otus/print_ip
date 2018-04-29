@@ -9,6 +9,10 @@
 #include <algorithm>
 
 
+template <typename T>
+constexpr bool is_integral_v = std::is_integral<T>::value;
+
+
 /*!
  Функция печати условного ip-адреса.
  как std::string
@@ -25,8 +29,8 @@ void print(std::ostream& os, const std::string& ip)
  Частичная специализация для контейнеров std::list, std::vector
 */
 template<typename T>
-typename std::enable_if<std::is_same<T, std::vector<typename T::value_type>>::value || 
-                        std::is_same<T, std::list  <typename T::value_type>>::value, void>::type 
+typename std::enable_if_t<is_same_v<T, std::vector<typename T::value_type>>|| 
+                          is_same_v<T, std::list  <typename T::value_type>>, void> 
 print(std::ostream& os, const T& ip) 
 {   
     D_PF_LOG(std::cout);
@@ -42,7 +46,7 @@ print(std::ostream& os, const T& ip)
  Частичная специализация для целочисленного представления
 */
 template<typename T>
-typename std::enable_if<std::is_integral<T>::value, void>::type
+typename std::enable_if_t<is_integral_v<T>, void>
 print (std::ostream& os, const T& ip) 
 {
     D_PF_LOG(std::cout);
@@ -60,7 +64,7 @@ print (std::ostream& os, const T& ip)
  Частичная специализация для tuple
 */
 template <typename T>
-typename std::enable_if<is_tuple<T>::value, void>::type
+typename std::enable_if_t<is_tuple_v<T>, void>
 print(std::ostream& os, const T& ip)
 {
     D_PF_LOG(std::cout);
@@ -76,17 +80,12 @@ print(std::ostream& os, const T& ip)
 */
 void base_print(std::ostream& os)
 {
-    print(os, (char)-1);
+    print(os, static_cast<char>(-1));
     os << std::endl;
-    print(os, short(0));
+    print(os, static_cast<char>(0));
     os << std::endl;
     print(os,  2130706433);
     os << std::endl;
     print(os,  8875824491850138409);
     os << std::endl;
 }
-
-static_assert(is_tuple<std::tuple<int, const int>>::value, "oops!");
-static_assert(is_tuple<std::tuple<int, int>>::value, "oops!");
-static_assert(is_tuple<std::tuple<int, int, int, char>>::value == false, "oops!");
-//static_assert(is_tuple<const std::tuple<int, int>>::value, "oops!"); //!!!!

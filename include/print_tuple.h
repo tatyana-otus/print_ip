@@ -4,23 +4,21 @@
 #include <iostream>
 #include <tuple>
 
+template< class T, class U >
+constexpr bool is_same_v = std::is_same<T, U>::value;
 
 /*!
  Проверяет что типы Ts... одинаковые
 */
-template <typename ... Ts>
-struct is_same_types;
 
-template <typename T> 
-struct is_same_types<T> : std::true_type {};
- 
-template <typename T, typename N, typename... Ts>
-struct is_same_types<T, N, Ts...>
-{
-    static const bool value = (std::is_same<typename std::decay<T>::type, 
-                                            typename std::decay<N>::type>::value) && 
-                              (is_same_types<T, Ts...>::value);
-};
+template <typename ... Args>
+struct is_same_types : std::true_type{};
+
+template <typename T, typename ... Args>
+struct is_same_types<T, T, Args...> : is_same_types<T, Args...>{};
+
+template <typename T, typename U, typename ... Args>
+struct is_same_types<T, U, Args...> : std::false_type{};
  
 
  /*!
@@ -40,9 +38,9 @@ struct is_tuple<std::tuple<Ts... >> : is_same_types<Ts...> {};
 template <> 
 struct is_tuple<std::tuple<>> : std::true_type {};
 
-template <typename T> 
-struct is_tuple<std::tuple<T>> : std::true_type {};
 
+template< typename... Ts>
+constexpr bool is_tuple_v = is_tuple<Ts...>::value;
 
 /*!
  Печать std::tuple
