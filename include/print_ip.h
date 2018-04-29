@@ -82,7 +82,7 @@ void base_print(std::ostream& os)
 {
     print(os, static_cast<char>(-1));
     os << std::endl;
-    print(os, static_cast<char>(0));
+    print(os, static_cast<short>(0));
     os << std::endl;
     print(os,  2130706433);
     os << std::endl;
