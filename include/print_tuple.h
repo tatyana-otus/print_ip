@@ -25,7 +25,7 @@ struct is_same_types<T, U, Args...> : std::false_type{};
  Используется для всех типов кроме std::tuple 
  и возвращает value = false
 */
-template <typename T, typename... Ts>
+template <typename... Ts>
 struct is_tuple : std::false_type {};
 
 /*!
